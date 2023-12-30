@@ -8,11 +8,20 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import React from "react";
 import * as Icon from 'react-bootstrap-icons';
 
+import BasePage from './basePage.js'
+import HomePage from './home.jsx'
+import HomeLab from './projects/homelab/cluster.jsx'
+import DockerPage from './projects/homelab/docker.js'
+import PersonalWebsitePage from './projects/personalWebsite/page.js'
+import ResumePage from './resume/resume.jsx'
+import ContactPage from './contact/contact.jsx'
+
 export const menu = [
   {
     icon: <HomeOutlinedIcon />,
     title: "Home",
-    to: "/"
+    to: "/",
+    element: <HomePage />
   },
   {
     icon: <ViewKanbanIcon />,
@@ -23,37 +32,33 @@ export const menu = [
         items: [
         {
             title: "Description",
-            to: "/projects/homelab/description"
+            to: "/projects/homelab/description",
+            element: <HomeLab />
           },
-          {
-            title: "Hardware",
-            to: "/thedowtheory"
-          },
-          {
-            title: "Cluster",
-            to: "/chart"
-          },
+             {
+            title: "Docker",
+            to: "/projects/homelab/docker",
+            element: <DockerPage />
+          }
         ]
       },
       {
         title: "Personal Website",
-        items: [
-          {
-            title: "The Dow Theory",
-            to: "/thedowtheory"
-          },
-        ]
+         to: "/projects/personal-website",
+            element: <PersonalWebsitePage />
       }
     ]
   },
   {
     icon: <ContactPageIcon/>,
     title: "Resume",
-    to: "/resume"
+    to: "/resume",
+    element: <ResumePage />
   },
     {
     icon: <PhoneIcon/>,
     title: "Contact",
-    to: "/contact"
+    to: "/contact",
+    element: <ContactPage />
   },
 ];

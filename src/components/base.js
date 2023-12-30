@@ -49,7 +49,9 @@ function BasePage({ window }) {
           >
             <MenuIcon />
           </IconButton>
+          <h4> Matias Wallenius </h4>
         </Toolbar>
+
       </AppBar>
       <Box
         component="nav"

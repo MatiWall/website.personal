@@ -9,16 +9,19 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
+const fontSize = '0.8rem'
+
 const MenuItem = ({ item, highlighted }) => {
 
     return (
-         <React.Fragment>
+         <>
+
       <ListItem button style={{ paddingLeft: `${item.level * 5}px` }}>
         <HashLink smooth to={`#${item.id}`} scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}>
           <ListItemText primary={item.content} style={{ color: highlighted ? 'red' : 'black' }} />
         </HashLink>
       </ListItem>
-    </React.Fragment>
+    </>
     );
 };
 
@@ -85,11 +88,14 @@ const ContentBar = ({ menu }) => {
 
 
   return (
+  <div style={{fontSize: fontSize}}>
+   <p> Table of Content </p>
     <List>
       {sections.map((item, key) => (
         <MenuItem key={key} item={item} highlighted={item === activeSection}/>
       ))}
     </List>
+    </div>
   );
 };
 

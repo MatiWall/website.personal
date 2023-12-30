@@ -8,7 +8,7 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import {menu} from './menu.jsx'
+import {menu} from './../pages/menu.jsx'
 
 export function hasChildren(item) {
   const { items: children } = item;

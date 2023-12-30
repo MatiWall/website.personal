@@ -1,7 +1,12 @@
+import {Typography } from '@mui/material';
+
 const ResumePage = () => {
   return (
     <>
-      <h1> This my resume page </h1>
+      <h1 id='resume'> Resume </h1>
+      <Typography >
+      To be added
+      </Typography >
     </>
   );
 };
