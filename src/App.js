@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import BasePage from './components/base.js';
+import {BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <h1>MWL Personal Website</h1>
+    <Router>
+      <BasePage/>
+    </Router>
     </div>
   );
 }
