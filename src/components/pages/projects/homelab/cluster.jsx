@@ -18,7 +18,7 @@ const HomeLab = () => {
          In the following sections and pages I strive to give a detailed explanation for my Home Lab project.
        </p>
 
-       <h1> Design Goals</h1>
+       <h1 id='design-goals'> Design Goals</h1>
        My main goal is to set up a K3s cluster to run my private workloads. Below is a list of the sub goals inorder to successfully do this:
        <p>
         <ul>

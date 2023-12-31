@@ -1,28 +1,44 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { HashLink} from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Collapse from "@material-ui/core/Collapse";
-import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Typography } from "@mui/material";
 
 const fontSize = '0.8rem'
 
 const MenuItem = ({ item, highlighted }) => {
 
-    return (
-         <>
+  return (
+    <>
 
-      <ListItem button style={{ paddingLeft: `${item.level * 5}px` }}>
-        <HashLink smooth to={`#${item.id}`} scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}>
-          <ListItemText primary={item.content} style={{ color: highlighted ? 'red' : 'black' }} />
+      <ListItem button style={{ 
+        paddingLeft: `${item.level * 5}px`,
+        paddingTop: '0px',
+        paddingBottom: '0px'
+        }}>
+        <HashLink 
+          smooth to={`#${item.id}`} 
+          scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+          style={{ textDecoration: 'none',  color: 'inherit' }}
+          >
+          <Typography
+            sx={{
+              fontSize: highlighted ? '0.9rem' : '0.8rem',
+              fontWeight: highlighted ? 'bold' : 'normal'
+            }}
+   
+          >
+            <ListItemText
+              disableTypography={true}
+              primary={item.content}
+            />
+          </Typography>
         </HashLink>
       </ListItem>
     </>
-    );
+  );
 };
 
 
@@ -55,7 +71,7 @@ const ContentBar = ({ menu }) => {
     console.log('Sections in ContentBar:', sectionsArray);
   }, [location]);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
@@ -88,13 +104,13 @@ const ContentBar = ({ menu }) => {
 
 
   return (
-  <div style={{fontSize: fontSize}}>
-   <p> Table of Content </p>
-    <List>
-      {sections.map((item, key) => (
-        <MenuItem key={key} item={item} highlighted={item === activeSection}/>
-      ))}
-    </List>
+    <div style={{ fontSize: fontSize }}>
+      <p> Table of Content </p>
+      <List>
+        {sections.map((item, key) => (
+          <MenuItem key={key} item={item} highlighted={item === activeSection} />
+        ))}
+      </List>
     </div>
   );
 };

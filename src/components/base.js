@@ -16,6 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SideBar from './sideBars/sidebar.jsx';
 import ContentBar from './sideBars/contentBar.js';
 import PageContent from './pages/content.jsx';
+import ThemeToggle from './themes/themeToggle.js'
+
 
 const drawerWidth = 240;
 const contentWidth = 200;
@@ -30,7 +32,7 @@ function BasePage({ window }) {
 
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -39,7 +41,9 @@ function BasePage({ window }) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar
+        sx={{ display: 'flex', justifyContent: 'space-between', width: { sm: `calc(100% - ${drawerWidth}px)` }, }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -50,6 +54,7 @@ function BasePage({ window }) {
             <MenuIcon />
           </IconButton>
           <h4> Matias Wallenius </h4>
+          <ThemeToggle/>
         </Toolbar>
 
       </AppBar>
@@ -70,7 +75,9 @@ function BasePage({ window }) {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
-          <Toolbar />
+          <Toolbar>
+          
+          </Toolbar>
           <Divider />
           <SideBar />
         </Drawer>
@@ -82,7 +89,11 @@ function BasePage({ window }) {
           }}
           open
         >
-          <Toolbar />
+
+            <Toolbar>
+             
+            </Toolbar>
+        
           <Divider />
           <SideBar />
         </Drawer>
@@ -91,6 +102,7 @@ function BasePage({ window }) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px - ${contentWidth}px)` } }}
       >
+
         <Toolbar />
         <PageContent />
       </Box>
@@ -109,7 +121,7 @@ function BasePage({ window }) {
         >
           <Toolbar />
           <Divider />
-          <ContentBar/>
+          <ContentBar />
         </Drawer>
       </Box>
     </Box>
