@@ -8,10 +8,12 @@ import {
   IconButton,
   Toolbar,
   Divider,
-  List,
-  ListItem,
+  Link,
+  Typography
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { FaGithub } from "react-icons/fa";
+
 
 import SideBar from './sideBars/sidebar.jsx';
 import ContentBar from './sideBars/contentBar.js';
@@ -42,7 +44,7 @@ function BasePage({ window }) {
         }}
       >
         <Toolbar
-        sx={{ display: 'flex', justifyContent: 'space-between', width: { sm: `calc(100% - ${drawerWidth}px)` }, }}
+          sx={{ display: 'flex', justifyContent: 'space-between', width: { sm: `calc(100% - ${drawerWidth}px)` }, }}
         >
           <IconButton
             color="inherit"
@@ -54,7 +56,32 @@ function BasePage({ window }) {
             <MenuIcon />
           </IconButton>
           <h4> Matias Wallenius </h4>
-          <ThemeToggle/>
+          <div
+            style={{
+              display: 'flex',
+
+            }}
+          >
+            <Link
+            href='https://github.com/MatiWall?tab=repositories'
+          
+            style={{ 
+              textDecoration: 'none', 
+              color: 'inherit',
+              display: 'flex',
+              alignItems: 'center',
+              marginRight: '1rem '
+            }}
+            >
+             <FaGithub size={22} style={{textAlign: 'center', marginRight: '0.3rem'}}/>
+             <Typography variant="caption" style={{fontSize: '1.3rem', fontWeight: 'bold'}}>GitHub</Typography>
+            </Link>
+        
+
+            <ThemeToggle />
+    
+          </div>
+
         </Toolbar>
 
       </AppBar>
@@ -76,7 +103,7 @@ function BasePage({ window }) {
           }}
         >
           <Toolbar>
-          
+
           </Toolbar>
           <Divider />
           <SideBar />
@@ -90,10 +117,10 @@ function BasePage({ window }) {
           open
         >
 
-            <Toolbar>
-             
-            </Toolbar>
-        
+          <Toolbar>
+
+          </Toolbar>
+
           <Divider />
           <SideBar />
         </Drawer>

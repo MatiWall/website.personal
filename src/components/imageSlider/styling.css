@@ -1,0 +1,10 @@
+.slickContentContainer {
+    display: flex;
+    justify-content: center
+    }
+    
+
+.slickContentContainer img {
+
+margin:0 auto; 
+}
