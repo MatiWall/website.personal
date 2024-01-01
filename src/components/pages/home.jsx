@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Grid, Card, CardContent, Typography } from '@mui/material';
 import {Link} from 'react-router-dom'
+import MoodIcon from '@mui/icons-material/Mood';
 
 import ImageSlider from '../imageSlider/imageSlider';
 
@@ -21,8 +22,12 @@ const HomePage = () => {
         Welcome!
       </Typography>
       <Typography>
-        Very welcome to you who sneak around on my website. First let me explain what this is.
-        In December 2023 I bought a Raspberry Pi with the goal of setting up a k3s cluster at home using full GitOps principals (had to spend my vacation on something).
+        Very welcome to you who sneak around on my website. My name is Matias Wallenius, 
+        I am a Senior Quantitative Analyst in a leading energy trading company in Aarhus Denmark.
+        If there is one thing i love it is to learn, which is also the reason why this website can to be. 
+        Let me explain, in December 2023 I bought a Raspberry Pi with the to teach myself Kubernetes,
+        some of the tools included in the echosystem around it and how to use GitOps principas (Had to spend my vacation on something).
+        To see the outcome click <Link to='/projects/homelab/description'>here</Link>.
         Obviously I need some workload to run in this cluster and what better way is there than a personal website to document my private projects.
       </Typography>
       <br />

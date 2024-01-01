@@ -9,9 +9,8 @@ const lightTheme = createTheme({
 });
 
 const darkTheme = createTheme({
-  palette: {
+  palette:  {
     mode: 'dark',
-    // other dark mode palette settings
   },
 });
 

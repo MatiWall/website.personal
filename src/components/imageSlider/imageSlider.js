@@ -15,11 +15,7 @@ const ImageSlider = ({paths}) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    display: 'flex', 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    height: '300px' 
+    autoplaySpeed: 3000
   };
 
   return (
